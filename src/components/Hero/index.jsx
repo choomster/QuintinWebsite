@@ -41,7 +41,7 @@ const Hero = ({ hero, socials }) => {
               <a href="#contact">
                 <button className="contact-btn font-medium flex items-center gap-2 ease-in duration-300 py-2 px-4 rounded-lg">
                   <BiMessageDetail />
-                  Let's Talk
+                  <span className="relative bottom-[1px]">Let's Talk</span>
                 </button>
               </a>
 

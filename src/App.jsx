@@ -36,7 +36,7 @@ const App = () => {
         // checkResumes={checkResumes}
       />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/quintinnguyen" element={<HomePage />} />
       </Routes>
     </div>
   );
