@@ -57,6 +57,22 @@ class SanityService {
       }
     });
   };
+
+  /* FETCH SANITY DATA */
+  getDataWithCategory = (type) => {
+    return new Promise((resolve, reject) => {
+      try {
+        const query = `*[_type == '${type}']{
+            ...,
+            category[]->
+          }|order(orderRank)`;
+        const data = sanityClient.fetch(query);
+        resolve(data);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  };
 }
 
 const instance = new SanityService();
