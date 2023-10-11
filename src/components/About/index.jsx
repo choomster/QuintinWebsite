@@ -52,9 +52,7 @@ const About = ({ about }) => {
           {about?.file !== undefined ? (
             <motion.a
               download
-              href={`https://cdn.sanity.io/files/${
-                import.meta.env.VITE_APP_SANITY_ID
-              }/production/${id}.${extension}`}
+              href={`https://cdn.sanity.io/files/jfpjgj3u/production/${id}.${extension}`}
               target="_blank"
               className="flex items-center gap-1 max-lg:mx-auto bg-[#915EFF] w-fit hover:bg-[#7b3dff] transition-all ease-in duration-200 mt-4 text-white rounded-lg p-4"
             >

@@ -45,7 +45,7 @@ const Hero = ({ hero, socials }) => {
               </a>
 
               <a
-                href="#portfolio"
+                href="#works"
                 className="font-semibold text-[16px] border-b border-solid border-current"
               >
                 See portfolio
