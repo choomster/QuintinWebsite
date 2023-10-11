@@ -65,9 +65,9 @@ const Header = ({
   return (
     <header className={`${scrollNav ? "scroll-header" : ""} header`}>
       <nav className="nav py-7 px-7 max-sm:px-4">
-        {location.pathname === "/" ? (
+        {location.pathname === "/quintinn" ? (
           <Link
-            to="/"
+            to="/quintinn"
             onClick={scrollTop}
             className="nav__logo text-cs uppercase"
           >
@@ -75,7 +75,7 @@ const Header = ({
           </Link>
         ) : (
           <RouterLink
-            to="/"
+            to="/quintinn"
             className={`text-cs uppercase ${
               !scrollNav && theme === "light-theme" && location.pathname !== "/"
                 ? "nav__logo color"
@@ -89,38 +89,59 @@ const Header = ({
         <div className={`${show ? "nav__menu show-menu" : "nav__menu"}`}>
           <div className="nav__data">
             <ul className="nav__list">
-              <>
-                {links
-                  .filter(
-                    (link) =>
-                      (link.name === "Skills" && checkSkills) ||
-                      (link.name === "Works" && checkPortfolios) ||
-                      (link.name === "Resume" && checkResumes) ||
-                      (link.name === "Services" && checkServices) ||
-                      (link.name === "Achievements" && checkAchievements) ||
-                      link.name === "Home" ||
-                      link.name === "About" ||
-                      link.name === "Contact"
-                  )
-                  .map((link, i) => (
-                    <span key={i}>
-                      <li className="nav__item">
-                        <Link
-                          className="nav__link text-cs"
-                          to={link.path}
-                          spy={true}
-                          hashSpy={true}
-                          smooth={true}
-                          offset={-120}
-                          duration={500}
-                          onClick={() => setShow(!show)}
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    </span>
-                  ))}
-              </>
+              {location.pathname === "/quintinn" ? (
+                <>
+                  {links
+                    .filter(
+                      (link) =>
+                        (link.name === "Skills" && checkSkills) ||
+                        (link.name === "Works" && checkPortfolios) ||
+                        (link.name === "Resume" && checkResumes) ||
+                        (link.name === "Services" && checkServices) ||
+                        (link.name === "Achievements" && checkAchievements) ||
+                        link.name === "Home" ||
+                        link.name === "About" ||
+                        link.name === "Contact"
+                    )
+                    .map((link, i) => (
+                      <span key={i}>
+                        <li className="nav__item">
+                          <Link
+                            className="nav__link text-cs"
+                            to={link.path}
+                            spy={true}
+                            hashSpy={true}
+                            smooth={true}
+                            offset={-120}
+                            duration={500}
+                            onClick={() => setShow(!show)}
+                          >
+                            {link.name}
+                          </Link>
+                        </li>
+                      </span>
+                    ))}
+                </>
+              ) : (
+                <>
+                  {location.pathname !== "/quintinn" ? (
+                    <li className="nav__item">
+                      <RouterLink
+                        to="/quintinn"
+                        onClick={() => {
+                          setShow(!show);
+                          animateScroll.scrollToTop();
+                        }}
+                        className="nav__link text-cs"
+                      >
+                        Go Home
+                      </RouterLink>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                </>
+              )}
             </ul>
 
             <div className="header__socials">
@@ -161,7 +182,6 @@ const Header = ({
         </div>
 
         <div className="nav__btns">
-          
           <div
             className={
               !scrollNav && theme === "light-theme" && location.pathname !== "/"
