@@ -27,8 +27,7 @@ const Hero = ({ hero, socials }) => {
               data-aos-duration="1500"
             >
               <h2 className="text-5xl font-semibold mb-2 max-sm:text-3xl">
-                {/* {hero?.title} */}
-                Hi 👋, I am Quintin Nguyen
+                {hero?.title}
               </h2>
             </div>
 
@@ -36,7 +35,7 @@ const Hero = ({ hero, socials }) => {
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="1800"
-              className="flex items-center gap-6 mt-7"
+              className="flex items-center button-wrapper gap-6 mt-7"
             >
               <a href="#contact">
                 <button className="contact-btn font-medium flex items-center gap-2 ease-in duration-300 py-2 px-4 rounded-lg">
@@ -61,11 +60,7 @@ const Hero = ({ hero, socials }) => {
               <span>
                 <GrAppsRounded />
               </span>
-              {/* {hero?.subTitle} */}
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-              sunt quam, explicabo nemo suscipit nobis excepturi animi veritatis
-              voluptate molestiae illum doloribus aut blanditiis, quo
-              dignissimos facilis mollitia quos repellat.
+              {hero?.subTitle}
             </p>
           </div>
         </div>

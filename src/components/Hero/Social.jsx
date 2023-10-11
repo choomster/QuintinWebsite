@@ -10,7 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Social = ({ socials }) => {
   return (
     <div
-      className="home__social"
+      className="home__social text-xl"
       data-aos="fade-right"
       data-aos-delay="100"
       data-aos-duration="1000"

@@ -38,13 +38,17 @@ const About = ({ about }) => {
           <h3 className="mb-5 mt-3 max-sm:mt-0 text-[18px] font-bold">
             {about?.job}
           </h3>
-          {/* <motion.p className="mt-4 max-w-xl leading-[30px]">
-            {about?.description}
-          </motion.p> */}
-          <div className="mt-4 max-w-xl leading-[30px]">
-            {/* With the @portabletext/react package, we print the description data from Sanity to the screen more regularly. */}
-            <PortableText value={about?.description} components={components} />
-          </div>
+          {about?.description !== undefined ? (
+            <div className="mt-4 max-w-xl leading-[30px]">
+              {/* With the @portabletext/react package, we print the description data from Sanity to the screen more regularly. */}
+              <PortableText
+                value={about?.description}
+                components={components}
+              />
+            </div>
+          ) : (
+            ""
+          )}
           {about?.file !== undefined ? (
             <motion.a
               download

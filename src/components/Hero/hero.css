@@ -19,12 +19,12 @@
   font-size: 1.3rem;
 }
 
-.contact-btn{
+.contact-btn {
   background-color: var(--primary-color);
   color: white;
 }
 
-.contact-btn:hover{
+.contact-btn:hover {
   background-color: var(--primary-color-hover);
 }
 
@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 992px) {
   .home__content {
-    grid-template-columns: 100px repeat(2, 1fr);
+    grid-template-columns: 80px repeat(2, 1fr);
     column-gap: 1.25rem;
   }
 
@@ -108,7 +108,13 @@
 
 @media screen and (max-width: 768px) {
   .home__content {
-    grid-template-columns: 0.5fr 3fr;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .button-wrapper {
+    justify-content: center;
   }
 
   .home__img {

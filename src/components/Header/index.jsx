@@ -120,18 +120,6 @@ const Header = ({
                       </li>
                     </span>
                   ))}
-                <li className="nav__item">
-                  <RouterLink
-                    to="/contact"
-                    onClick={() => {
-                      setShow(!show);
-                      animateScroll.scrollToTop();
-                    }}
-                    className="nav__link text-cs"
-                  >
-                    Contact
-                  </RouterLink>
-                </li>
               </>
             </ul>
 
