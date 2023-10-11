@@ -95,7 +95,7 @@ const PortfolioDetailPage = () => {
               <div className="mt-5">
                 {/* Show the pdf from sanity.io on the screen */}
                 <PDFViewer
-                  pdf={`https://cdn.sanity.io/files/qvaix6bj/production/${id}.${extension}`}
+                  pdf={`https://cdn.sanity.io/files/jfpjgj3u/production/${id}.${extension}`}
                 />
               </div>
             ) : (

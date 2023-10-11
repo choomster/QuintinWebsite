@@ -2,6 +2,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import getVideoId from "get-video-id";
 import YouTube from "react-youtube";
 import sanityClient from "../../sanity";
+import { BiLinkExternal } from "react-icons/bi";
 
 /* A builder to be able to use images from sanity.io */
 const builder = imageUrlBuilder(sanityClient);
@@ -35,6 +36,8 @@ const SampleImageComponent = (props) => {
   );
 };
 
+// Sets the texts coming from sanity.io to apply a certain format and style
+// @portabletext/react package
 export const components = {
   types: {
     image: SampleImageComponent,
@@ -55,15 +58,15 @@ export const components = {
     },
     button: (props) => {
       return (
-        <div className="my-2">
-          <a
-            href={props.value.link}
-            target="_blank"
-            className="seminar-file-btn text-[15px] rounded-[0.375rem] px-4 py-2 text-center"
-          >
-            {props.value.name}
-          </a>
-        </div>
+        <a
+          href={props?.value?.link}
+          target="_blank"
+          className="inline-block my-2 portable-text-button"
+        >
+          <button className="flex items-center gap-2 font-semibold py-2 px-4 rounded-lg max-h-[32px] transition-all ease-in duration-300">
+            {props?.value?.name}
+          </button>
+        </a>
       );
     },
     // Any other custom types you have in your content
@@ -84,7 +87,7 @@ export const components = {
         <a
           href={value?.href}
           target={target}
-          className="hover:underline link"
+          className="underline"
           rel={target === "_blank" && "noindex nofollow"}
         >
           {children}
@@ -103,17 +106,15 @@ export const components = {
     h4: ({ children }) => <h4 className="text-xl">{children}</h4>,
     p: ({ children }) => console.log(children),
     // Ex. 2: rendering custom styles
-    customHeading: ({ children }) => (
-      <h2 className="text-lg text-primary text-purple-700">{children}</h2>
-    ),
+    customHeading: ({ children }) => <h2 className="text-lg">{children}</h2>,
   },
   list: {
     // Ex. 1: customizing common list types
     bullet: ({ children }) => (
-      <ul className="mt-xl list-inside flex flex-col gap-3">{children}</ul>
+      <ul className="mt-xl pl-10 flex flex-col gap-3">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="mt-lg list-decimal list-inside flex flex-col gap-3">
+      <ol className="mt-lg pl-10 list-decimal flex flex-col gap-3">
         {children}
       </ol>
     ),
