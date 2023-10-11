@@ -12,10 +12,10 @@ const Breadcrumb = ({ location, name }) => {
       <ol className="inline-flex items-center space-x-1 md:space-x-2">
         <li className="inline-flex items-center">
           <a
-            href="/quintinn"
+            href="/quintinn/"
             onClick={(e) => {
               e.preventDefault();
-              navigate("/quintinn");
+              navigate("/quintinn/");
               window.scrollTo(0, 0);
             }}
             className="text-md breadcrumb-icon inline-flex items-center"
