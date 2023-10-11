@@ -127,7 +127,7 @@ const Header = ({
                   {location.pathname !== "/quintinn/" ? (
                     <li className="nav__item">
                       <RouterLink
-                        to="/quintinn"
+                        to="/quintinn/"
                         onClick={() => {
                           setShow(!show);
                           animateScroll.scrollToTop();
