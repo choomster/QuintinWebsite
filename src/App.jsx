@@ -148,6 +148,7 @@ const App = () => {
               resumes={resumes}
               socials={socials}
               contact={contact}
+              theme={theme}
             />
           }
         />

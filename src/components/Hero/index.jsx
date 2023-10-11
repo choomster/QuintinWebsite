@@ -3,9 +3,9 @@ import "./hero.css";
 import Social from "./Social";
 import ScrollDown from "./ScrollDown";
 import { BiMessageDetail } from "react-icons/bi";
-import { GrAppsRounded } from "react-icons/gr";
+import { RiApps2Line } from "react-icons/ri";
 
-const Hero = ({ hero, socials }) => {
+const Hero = ({ hero, socials, theme }) => {
   return (
     <section
       className="home section flex overflow-hidden h-[calc(100vh-92px)] max-[768px]:-mt-5"
@@ -51,17 +51,21 @@ const Hero = ({ hero, socials }) => {
                 See portfolio
               </a>
             </div>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="1400"
-              className="flex gap-2 mt-6 font-medium max-lg:hidden text-[15px] max-sm:text-[14px] leading-7 sm:pl-14 sm:pr-6"
-            >
-              <span>
-                <GrAppsRounded />
-              </span>
-              {hero?.subTitle}
-            </p>
+            {hero?.subTitle !== undefined ? (
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="1400"
+                className="flex gap-2 mt-6 font-medium max-lg:hidden text-[15px] max-sm:text-[14px] leading-7 sm:pl-14 sm:pr-6"
+              >
+                <span>
+                  <RiApps2Line size={18} />
+                </span>
+                {hero?.subTitle}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <ScrollDown />

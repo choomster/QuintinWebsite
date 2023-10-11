@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "../../../sanity";
 import { Truncate } from "../../utils/TruncateText";
+import { useNavigate } from "react-router-dom";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -12,6 +13,8 @@ function urlFor(source) {
 }
 
 const Items = ({ projectItems }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       {projectItems?.map((projectItem) => {
@@ -26,7 +29,14 @@ const Items = ({ projectItems }) => {
             key={projectItem?._id}
           >
             <div className="portfolio__img-wrapper">
-              <a href={`/quintinn/portfolio/${projectItem?.slug.current}`}>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                  window.scrollTo(0, 0);
+                }}
+                href={`/quintinn/portfolio/${projectItem?.slug.current}`}
+              >
                 <img
                   src={urlFor(projectItem?.mainImage.asset._ref)}
                   alt=""
@@ -38,6 +48,11 @@ const Items = ({ projectItems }) => {
               {projectItem?.category[0].title}
             </span>
             <a
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                window.scrollTo(0, 0);
+              }}
               href={`/quintinn/portfolio/${projectItem?.slug.current}`}
               className="portfolio__title text-lg font-bold break-words"
             >
@@ -55,6 +70,11 @@ const Items = ({ projectItems }) => {
                   Truncate(projectItem?.description, 200)}
               </p>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                  window.scrollTo(0, 0);
+                }}
                 href={`/quintinn/portfolio/${projectItem?.slug.current}`}
                 className="link absolute bottom-4"
               >

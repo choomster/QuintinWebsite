@@ -17,10 +17,11 @@ const HomePage = ({
   resumes,
   socials,
   contact,
+  theme,
 }) => {
   return (
     <main className="container2">
-      <Hero hero={hero} socials={socials} />
+      <Hero hero={hero} socials={socials} theme={theme} />
       <About about={about} />
       <Achievements achievements={achievements} />
       <Resume resumes={resumes} />
