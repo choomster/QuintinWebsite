@@ -32,10 +32,10 @@ const Items = ({ projectItems }) => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                  navigate(`/portfolio/${projectItem?.slug.current}`);
                   window.scrollTo(0, 0);
                 }}
-                href={`/quintinn/portfolio/${projectItem?.slug.current}`}
+                href={`/portfolio/${projectItem?.slug.current}`}
               >
                 <img
                   src={urlFor(projectItem?.mainImage.asset._ref)}
@@ -50,10 +50,10 @@ const Items = ({ projectItems }) => {
             <a
               onClick={(e) => {
                 e.preventDefault();
-                navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                navigate(`/portfolio/${projectItem?.slug.current}`);
                 window.scrollTo(0, 0);
               }}
-              href={`/quintinn/portfolio/${projectItem?.slug.current}`}
+              href={`/portfolio/${projectItem?.slug.current}`}
               className="portfolio__title text-lg font-bold break-words"
             >
               {projectItem?.title && Truncate(projectItem?.title, 90)}
@@ -72,10 +72,10 @@ const Items = ({ projectItems }) => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/quintinn/portfolio/${projectItem?.slug.current}`);
+                  navigate(`/portfolio/${projectItem?.slug.current}`);
                   window.scrollTo(0, 0);
                 }}
-                href={`/quintinn/portfolio/${projectItem?.slug.current}`}
+                href={`/portfolio/${projectItem?.slug.current}`}
                 className="link absolute bottom-4"
               >
                 See Details

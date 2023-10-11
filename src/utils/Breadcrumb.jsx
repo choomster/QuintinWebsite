@@ -12,10 +12,10 @@ const Breadcrumb = ({ location, name }) => {
       <ol className="inline-flex items-center space-x-1 md:space-x-2">
         <li className="inline-flex items-center">
           <a
-            href="/quintinn/"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
-              navigate("/quintinn/");
+              navigate("/");
               window.scrollTo(0, 0);
             }}
             className="text-md breadcrumb-icon inline-flex items-center"
@@ -39,10 +39,10 @@ const Breadcrumb = ({ location, name }) => {
                 ></path>
               </svg>
               <a
-                href={`/quintinn/${location.toLowerCase()}`}
+                href={`/${location.toLowerCase()}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(`/quintinn/${location.toLowerCase()}`);
+                  navigate(`/${location.toLowerCase()}`);
                   window.scrollTo(0, 0);
                 }}
                 className="text-md breadcrumb-icon ml-1 md:ml-2 text-sm font-medium"

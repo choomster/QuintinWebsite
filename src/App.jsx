@@ -137,7 +137,7 @@ const App = () => {
       />
       <Routes>
         <Route
-          path="/quintinn"
+          path="/"
           element={
             <HomePage
               hero={hero}
@@ -153,10 +153,10 @@ const App = () => {
           }
         />
         <Route
-          path="/quintinn/portfolio"
+          path="/portfolio"
           element={<PortfolioPage projects={projects} />}
         />
-        <Route path="/quintinn/portfolio/:slug" element={<PortfolioDetailPage />} />
+        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
       </Routes>
       <Footer socials={socials} />
     </div>

@@ -39,7 +39,7 @@ const Portfolio = ({ projects, catList }) => {
       </div>
       <div className="max-sm:px-4 mb-10 ">
         <Link
-          to="/quintinn/portfolio"
+          to="/portfolio"
           className="btn text-cs all-portfolio mx-auto w-52 max-sm:w-full mt-4"
         >
           All Works

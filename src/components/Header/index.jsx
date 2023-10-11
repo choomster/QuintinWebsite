@@ -65,9 +65,9 @@ const Header = ({
   return (
     <header className={`${scrollNav ? "scroll-header" : ""} header`}>
       <nav className="nav py-7 px-7 max-sm:px-4">
-        {location.pathname === "/quintinn/" ? (
+        {location.pathname === "/" ? (
           <Link
-            to="/quintinn/"
+            to="/"
             onClick={scrollTop}
             className="nav__logo text-cs uppercase"
           >
@@ -75,7 +75,7 @@ const Header = ({
           </Link>
         ) : (
           <RouterLink
-            to="/quintinn/"
+            to="/"
             className={`text-cs uppercase ${
               !scrollNav && theme === "light-theme" && location.pathname !== "/"
                 ? "nav__logo color"
@@ -89,7 +89,7 @@ const Header = ({
         <div className={`${show ? "nav__menu show-menu" : "nav__menu"}`}>
           <div className="nav__data">
             <ul className="nav__list">
-              {location.pathname === "/quintinn/" ? (
+              {location.pathname === "/" ? (
                 <>
                   {links
                     .filter(
@@ -124,10 +124,10 @@ const Header = ({
                 </>
               ) : (
                 <>
-                  {location.pathname !== "/quintinn/" ? (
+                  {location.pathname !== "/" ? (
                     <li className="nav__item">
                       <RouterLink
-                        to="/quintinn/"
+                        to="/"
                         onClick={() => {
                           setShow(!show);
                           animateScroll.scrollToTop();
