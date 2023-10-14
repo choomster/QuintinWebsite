@@ -5,6 +5,7 @@ import { HomePage, PortfolioDetailPage, PortfolioPage } from "./pages";
 import Aos from "aos";
 import { Route, Routes } from "react-router-dom";
 import SanityService from "./services/sanityService";
+import ParticlesBg from './shared-components/ParticlesBg'
 
 const getStorageTheme = () => {
   let theme = "dark-theme";
@@ -135,30 +136,35 @@ const App = () => {
         checkAchievements={checkAchievements}
         checkResumes={checkResumes}
       />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              hero={hero}
-              about={about}
-              achievements={achievements}
-              projects={projects}
-              catList={catList}
-              resumes={resumes}
-              socials={socials}
-              contact={contact}
-              theme={theme}
-            />
-          }
-        />
-        <Route
-          path="/portfolio"
-          element={<PortfolioPage projects={projects} />}
-        />
-        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
-      </Routes>
-      <Footer socials={socials} />
+      <div className="relative z-0">
+        <div className="hidden sm:block">
+          <ParticlesBg />
+        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                hero={hero}
+                about={about}
+                achievements={achievements}
+                projects={projects}
+                catList={catList}
+                resumes={resumes}
+                socials={socials}
+                contact={contact}
+                theme={theme}
+              />
+            }
+          />
+          <Route
+            path="/portfolio"
+            element={<PortfolioPage projects={projects} />}
+          />
+          <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
+        </Routes>
+        <Footer socials={socials} />
+      </div>
     </div>
   );
 };
