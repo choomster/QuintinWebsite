@@ -23,8 +23,10 @@
   justify-content: center;
 }
 
-.download {
-  width: 38%;
-  margin-top: 25px;
-  display: flex;
+.about__btn{
+  background-color: var(--primary-color);
+}
+
+.about__btn:hover{
+  background-color: var(--primary-color-hover);
 }

@@ -1,6 +1,6 @@
 /* FOOTER */
 .footer {
-  border-top: 1px solid #915eff4b;
+  border-top: 1px solid var(--bg-color-alt);
 }
 
 .footer__container {

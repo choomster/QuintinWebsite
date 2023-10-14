@@ -27,8 +27,4 @@ export const links = [
     name: "Works",
     path: "works",
   },
-  {
-    name: "Contact",
-    path: "contact",
-  },
 ];

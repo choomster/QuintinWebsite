@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import SanityService from "./services/sanityService";
 
 const getStorageTheme = () => {
-  let theme = "light-theme";
+  let theme = "dark-theme";
   if (localStorage.getItem("theme")) {
     theme = localStorage.getItem("theme");
   }

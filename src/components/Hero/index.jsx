@@ -68,7 +68,7 @@ const Hero = ({ hero, socials, theme }) => {
             )}
           </div>
         </div>
-        <ScrollDown />
+        {/* <ScrollDown /> */}
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ const Resume = ({ resumes, theme }) => {
 
   // If the resumes array is empty, we do not render this component.
   return resumes?.length !== 0 ? (
-    <div id="resume" className="qualification section container2 mx-auto">
+    <div id="resume" className="qualification section container2 mx-auto mt-32">
       <div className="text-center">
         <p
           className={`${styles.sectionSubText} second-font`}
@@ -38,28 +38,47 @@ const Resume = ({ resumes, theme }) => {
             className={
               toggle === 1
                 ? "qualification__button button--flex qualification__active active-resume resume__list-item"
-                : "qualification__button button--flex resume__list-item "
-            }
-          >
-            <i className="ri-graduation-cap-line qualification__icon"></i>
-            <span className=" max-sm:text-base">Education</span>
-          </div>
-
-          <div
-            onClick={() => toggleTab(2)}
-            className={
-              toggle === 2
-                ? "qualification__button button--flex qualification__active active-resume resume__list-item"
                 : "qualification__button button--flex resume__list-item"
             }
           >
             <i className="ri-briefcase-line qualification__icon"></i>
             <span className=" max-sm:text-base">Experience</span>
           </div>
+          <div
+            onClick={() => toggleTab(2)}
+            className={
+              toggle === 2
+                ? "qualification__button button--flex qualification__active active-resume resume__list-item"
+                : "qualification__button button--flex resume__list-item "
+            }
+          >
+            <i className="ri-graduation-cap-line qualification__icon"></i>
+            <span className=" max-sm:text-base">Education</span>
+          </div>
         </div>
 
-        {/* toggle===1 -> Education */}
+        {/* toggle===1 -> experience */}
         {toggle === 1 ? (
+          <div className="mt-20 flex flex-col overflow-hidden">
+            {resumes && (
+              // RESUME component with VerticalTimeline package
+              <VerticalTimeline
+                lineColor={theme === "dark-theme" ? "#815ad53a" : "#cfc6ba"}
+              >
+                {resumes?.map((experience, index) => {
+                  if (experience.category === "experience") {
+                    return (
+                      <ExperienceEducationCard
+                        key={`experience-${index}`}
+                        data={experience}
+                      />
+                    );
+                  }
+                })}
+              </VerticalTimeline>
+            )}
+          </div>
+        ) : (
           <div className="mt-20 flex flex-col overflow-hidden">
             {resumes && (
               // RESUME component with VerticalTimeline package
@@ -72,28 +91,6 @@ const Resume = ({ resumes, theme }) => {
                       <ExperienceEducationCard
                         key={`educations-${index}`}
                         data={education}
-                      />
-                    );
-                  }
-                })}
-              </VerticalTimeline>
-            )}
-          </div>
-        ) : (
-          <div className="mt-20 flex flex-col overflow-hidden">
-            {/* toggle !== 1 -> Experience */}
-
-            {resumes && (
-              // RESUME component with VerticalTimeline package
-              <VerticalTimeline
-                lineColor={theme === "dark-theme" ? "#815ad53a" : "#cfc6ba"}
-              >
-                {resumes?.map((experience, index) => {
-                  if (experience.category === "experience") {
-                    return (
-                      <ExperienceEducationCard
-                        key={`experience-${index}`}
-                        data={experience}
                       />
                     );
                   }

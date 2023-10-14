@@ -26,7 +26,7 @@ const HomePage = ({
       <Achievements achievements={achievements} />
       <Resume resumes={resumes} />
       <Portfolio projects={projects} catList={catList} />
-      <Contact contact={contact} />
+      {/* <Contact contact={contact} /> */}
     </main>
   );
 };

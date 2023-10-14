@@ -28,12 +28,9 @@ const About = ({ about }) => {
         <p className={`${styles.sectionSubText} second-font text-center`}>
           About
         </p>
-        <h2 className={`${styles.sectionHeadText} section-title`}>
-          <span className="text-[#915EFF]">My</span> Introduction
-        </h2>
       </motion.div>
 
-      <div className="flex flex-row-reverse max-lg:flex-col-reverse max-lg:items-center gap-10 justify-center">
+      <div className="flex flex-row-reverse max-lg:flex-col-reverse mt-5 max-lg:items-center gap-10 justify-center">
         <div>
           <h3 className="mb-5 mt-3 max-sm:mt-0 text-[18px] font-bold">
             {about?.job}
@@ -54,7 +51,7 @@ const About = ({ about }) => {
               download
               href={`https://cdn.sanity.io/files/jfpjgj3u/production/${id}.${extension}`}
               target="_blank"
-              className="flex items-center gap-1 max-lg:mx-auto bg-[#915EFF] w-fit hover:bg-[#7b3dff] transition-all ease-in duration-200 mt-4 text-white rounded-lg p-4"
+              className="about__btn flex items-center gap-1 max-lg:mx-auto w-fit transition-all ease-in duration-200 mt-4 text-white rounded-lg p-4"
             >
               Download Resume
               <HiDocumentDownload size={20} />
