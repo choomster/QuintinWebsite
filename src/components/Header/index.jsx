@@ -12,6 +12,8 @@ import { Link } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import { links } from "../../constant/headerLinks";
+import Logo from "../../assets/logo.png";
+import LogoWhite from "../../assets/logo-white.png";
 
 const Header = ({
   socials,
@@ -69,21 +71,35 @@ const Header = ({
           <Link
             to="/"
             onClick={scrollTop}
-            className="nav__logo text-cs uppercase"
+            className="nav__logo text-cs uppercase w-16 h-16 flex items-center"
           >
-            Nguyen
+            {theme === "dark-theme" ? (
+              <img
+                src={LogoWhite}
+                alt=""
+                className="w-full h-full -mr-[12px]"
+              />
+            ) : (
+              <img src={Logo} alt="" className="w-full h-full -mr-[10px]" />
+            )}
+            uintin
           </Link>
         ) : (
           <RouterLink
             to="/"
-            className={`text-cs uppercase ${
-              !scrollNav && theme === "light-theme" && location.pathname !== "/"
-                ? "nav__logo color"
-                : "nav__logo"
-            }`}
+            className="nav__logo text-cs uppercase w-16 h-16 flex items-center"
             onClick={scrollTop}
           >
-            Nguyen
+            {theme === "dark-theme" ? (
+              <img
+                src={LogoWhite}
+                alt=""
+                className="w-full h-full -mr-[12px]"
+              />
+            ) : (
+              <img src={Logo} alt="" className="w-full h-full -mr-[10px]" />
+            )}{" "}
+            uintin
           </RouterLink>
         )}
         <div className={`${show ? "nav__menu show-menu" : "nav__menu"}`}>
