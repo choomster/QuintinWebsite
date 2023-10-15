@@ -31,7 +31,7 @@ const Hero = ({ hero, socials, theme }) => {
               </h2>
             </div>
 
-            <div
+            {/* <div
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="1800"
@@ -50,13 +50,13 @@ const Hero = ({ hero, socials, theme }) => {
               >
                 See portfolio
               </a>
-            </div>
+            </div> */}
             {hero?.subTitle !== undefined ? (
               <p
                 data-aos="fade-up"
                 data-aos-delay="100"
                 data-aos-duration="1400"
-                className="flex gap-2 mt-6 font-medium max-lg:hidden text-[15px] max-sm:text-[14px] leading-7 sm:pl-14 sm:pr-6"
+                className="flex gap-2 mt-6 font-medium max-md:hidden text-[15px] max-sm:text-[14px] leading-7 sm:pl-4 sm:pr-6"
               >
                 <span>
                   <RiApps2Line size={18} />

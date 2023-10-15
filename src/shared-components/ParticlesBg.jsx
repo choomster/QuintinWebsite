@@ -48,7 +48,7 @@ const ParticlesBg = () => {
           },
           links: {
             color: "#915EFF",
-            distance: 150,
+            distance: 110,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -71,10 +71,10 @@ const ParticlesBg = () => {
               enable: true,
               area: 800,
             },
-            value: 30,
+            value: 20,
           },
           opacity: {
-            value: 0.5,
+            value: 0.4,
           },
           shape: {
             type: "circle",
