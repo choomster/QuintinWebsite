@@ -34,6 +34,7 @@ export default defineType({
       title: 'StartDate',
       type: 'date',
       options: {dateFormat: 'MMMM YYYY'},
+      description: 'If you do not select the Start Date, the current date is selected by default.',
     }),
     defineField({
       name: 'endDate',
