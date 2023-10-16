@@ -58,10 +58,10 @@ const Hero = ({ hero, socials, theme }) => {
                 data-aos-duration="1400"
                 className="flex gap-2 mt-6 font-medium max-md:hidden text-[15px] max-sm:text-[14px] leading-7 sm:pl-4 sm:pr-6"
               >
-                <span>
+                <span className="flex gap-2">
                   <RiApps2Line size={18} />
+                  <span className="flex-1 -mt-1">{hero?.subTitle}</span>
                 </span>
-                {hero?.subTitle}
               </p>
             ) : (
               ""
